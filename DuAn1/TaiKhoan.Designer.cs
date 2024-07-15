@@ -187,7 +187,7 @@
             Controls.Add(label1);
             Name = "TaiKhoan";
             Text = "TaiKhoan";
-            Load += this.TaiKhoan_Load;
+           
             ResumeLayout(false);
             PerformLayout();
         }
