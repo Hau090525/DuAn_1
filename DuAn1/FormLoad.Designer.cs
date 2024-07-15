@@ -28,158 +28,132 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLoad));
-            menuStrip1 = new MenuStrip();
-            toolStripMenuItem1 = new ToolStripMenuItem();
-            toolStripMenuItem2 = new ToolStripMenuItem();
-            toolStripSeparator1 = new ToolStripSeparator();
-            quảnToolStripMenuItem = new ToolStripMenuItem();
-            quảnLíNhânViênToolStripMenuItem = new ToolStripMenuItem();
-            quảnLíHàngHóaToolStripMenuItem = new ToolStripMenuItem();
-            quảnLýThựcĐơnToolStripMenuItem = new ToolStripMenuItem();
-            quảnLýKhoToolStripMenuItem = new ToolStripMenuItem();
-            quảnLíVoucherToolStripMenuItem = new ToolStripMenuItem();
-            quảnLíĐặtBànToolStripMenuItem = new ToolStripMenuItem();
-            tàiKhoảnToolStripMenuItem = new ToolStripMenuItem();
-            đặtBànToolStripMenuItem = new ToolStripMenuItem();
             loadform = new Panel();
-            menuStrip1.SuspendLayout();
+            myPanel = new Panel();
+            btnNhanVien = new Button();
+            btnKHO = new Button();
+            btnTD = new Button();
+            btnQLBA = new Button();
+            btnDatBan = new Button();
+            btnQLMA = new Button();
+            myPanel.SuspendLayout();
             SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, tàiKhoảnToolStripMenuItem, đặtBànToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(809, 24);
-            menuStrip1.TabIndex = 0;
-            menuStrip1.Text = "menuStrip1";
-            // 
-            // toolStripMenuItem1
-            // 
-            toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem2, toolStripSeparator1, quảnToolStripMenuItem, quảnLíNhânViênToolStripMenuItem, quảnLíHàngHóaToolStripMenuItem, quảnLíĐặtBànToolStripMenuItem });
-            toolStripMenuItem1.Image = (Image)resources.GetObject("toolStripMenuItem1.Image");
-            toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(78, 20);
-            toolStripMenuItem1.Text = "Quản Lý";
-            // 
-            // toolStripMenuItem2
-            // 
-            toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(180, 22);
-            toolStripMenuItem2.Text = "Hóa Đơn";
-            // 
-            // toolStripSeparator1
-            // 
-            toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(177, 6);
-            // 
-            // quảnToolStripMenuItem
-            // 
-            quảnToolStripMenuItem.Name = "quảnToolStripMenuItem";
-            quảnToolStripMenuItem.Size = new Size(180, 22);
-            quảnToolStripMenuItem.Text = "Quản lí Khách Hàng";
-            // 
-            // quảnLíNhânViênToolStripMenuItem
-            // 
-            quảnLíNhânViênToolStripMenuItem.Name = "quảnLíNhânViênToolStripMenuItem";
-            quảnLíNhânViênToolStripMenuItem.Size = new Size(180, 22);
-            quảnLíNhânViênToolStripMenuItem.Text = "Quản lí Nhân Viên";
-            quảnLíNhânViênToolStripMenuItem.Click += quảnLíNhânViênToolStripMenuItem_Click;
-            // 
-            // quảnLíHàngHóaToolStripMenuItem
-            // 
-            quảnLíHàngHóaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { quảnLýThựcĐơnToolStripMenuItem, quảnLýKhoToolStripMenuItem, quảnLíVoucherToolStripMenuItem });
-            quảnLíHàngHóaToolStripMenuItem.Name = "quảnLíHàngHóaToolStripMenuItem";
-            quảnLíHàngHóaToolStripMenuItem.Size = new Size(180, 22);
-            quảnLíHàngHóaToolStripMenuItem.Text = "Quản lí Hàng Hóa";
-            // 
-            // quảnLýThựcĐơnToolStripMenuItem
-            // 
-            quảnLýThựcĐơnToolStripMenuItem.Name = "quảnLýThựcĐơnToolStripMenuItem";
-            quảnLýThựcĐơnToolStripMenuItem.Size = new Size(166, 22);
-            quảnLýThựcĐơnToolStripMenuItem.Text = "Quản lý thực đơn";
-            quảnLýThựcĐơnToolStripMenuItem.Click += quảnLýThựcĐơnToolStripMenuItem_Click;
-            // 
-            // quảnLýKhoToolStripMenuItem
-            // 
-            quảnLýKhoToolStripMenuItem.Name = "quảnLýKhoToolStripMenuItem";
-            quảnLýKhoToolStripMenuItem.Size = new Size(166, 22);
-            quảnLýKhoToolStripMenuItem.Text = "Quản lý kho";
-            quảnLýKhoToolStripMenuItem.Click += quảnLýKhoToolStripMenuItem_Click;
-            // 
-            // quảnLíVoucherToolStripMenuItem
-            // 
-            quảnLíVoucherToolStripMenuItem.Name = "quảnLíVoucherToolStripMenuItem";
-            quảnLíVoucherToolStripMenuItem.Size = new Size(166, 22);
-            quảnLíVoucherToolStripMenuItem.Text = "Quản lí voucher";
-            // 
-            // quảnLíĐặtBànToolStripMenuItem
-            // 
-            quảnLíĐặtBànToolStripMenuItem.Name = "quảnLíĐặtBànToolStripMenuItem";
-            quảnLíĐặtBànToolStripMenuItem.Size = new Size(180, 22);
-            quảnLíĐặtBànToolStripMenuItem.Text = "Quản lí Đặt Bàn";
-            quảnLíĐặtBànToolStripMenuItem.Click += quảnLíĐặtBànToolStripMenuItem_Click;
-            // 
-            // tàiKhoảnToolStripMenuItem
-            // 
-            tàiKhoảnToolStripMenuItem.Image = (Image)resources.GetObject("tàiKhoảnToolStripMenuItem.Image");
-            tàiKhoảnToolStripMenuItem.Name = "tàiKhoảnToolStripMenuItem";
-            tàiKhoảnToolStripMenuItem.Size = new Size(86, 20);
-            tàiKhoảnToolStripMenuItem.Text = "Tài Khoản";
-            tàiKhoảnToolStripMenuItem.Click += tàiKhoảnToolStripMenuItem_Click;
-            // 
-            // đặtBànToolStripMenuItem
-            // 
-            đặtBànToolStripMenuItem.Image = (Image)resources.GetObject("đặtBànToolStripMenuItem.Image");
-            đặtBànToolStripMenuItem.Name = "đặtBànToolStripMenuItem";
-            đặtBànToolStripMenuItem.Size = new Size(76, 20);
-            đặtBànToolStripMenuItem.Text = "Đặt Bàn";
-            đặtBànToolStripMenuItem.Click += đặtBànToolStripMenuItem_Click;
             // 
             // loadform
             // 
             loadform.BorderStyle = BorderStyle.FixedSingle;
             loadform.ImeMode = ImeMode.Disable;
-            loadform.Location = new Point(0, 27);
+            loadform.Location = new Point(207, 1);
             loadform.Name = "loadform";
-            loadform.Size = new Size(809, 449);
+            loadform.Size = new Size(809, 475);
             loadform.TabIndex = 1;
+            loadform.Paint += loadform_Paint;
+            // 
+            // myPanel
+            // 
+            myPanel.BackColor = SystemColors.Control;
+            myPanel.Controls.Add(btnNhanVien);
+            myPanel.Controls.Add(btnKHO);
+            myPanel.Controls.Add(btnTD);
+            myPanel.Controls.Add(btnQLBA);
+            myPanel.Controls.Add(btnDatBan);
+            myPanel.Controls.Add(btnQLMA);
+            myPanel.Dock = DockStyle.Left;
+            myPanel.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            myPanel.ForeColor = Color.FromArgb(255, 192, 255);
+            myPanel.Location = new Point(0, 0);
+            myPanel.Name = "myPanel";
+            myPanel.Size = new Size(201, 476);
+            myPanel.TabIndex = 2;
+            // 
+            // btnNhanVien
+            // 
+            btnNhanVien.Location = new Point(0, 354);
+            btnNhanVien.Name = "btnNhanVien";
+            btnNhanVien.Size = new Size(201, 48);
+            btnNhanVien.TabIndex = 5;
+            btnNhanVien.Text = "Quản Lý Nhân Viên";
+            btnNhanVien.UseVisualStyleBackColor = true;
+            btnNhanVien.Click += btnNhanVien_Click;
+            // 
+            // btnKHO
+            // 
+            btnKHO.Location = new Point(0, 300);
+            btnKHO.Name = "btnKHO";
+            btnKHO.Size = new Size(201, 48);
+            btnKHO.TabIndex = 4;
+            btnKHO.Text = "Quản Lý Kho";
+            btnKHO.UseVisualStyleBackColor = true;
+            btnKHO.Click += btnKHO_Click;
+            // 
+            // btnTD
+            // 
+            btnTD.Location = new Point(0, 246);
+            btnTD.Name = "btnTD";
+            btnTD.Size = new Size(201, 48);
+            btnTD.TabIndex = 3;
+            btnTD.Text = "Quản Lý Thực Đơn";
+            btnTD.UseVisualStyleBackColor = true;
+            btnTD.Click += btnTD_Click;
+            // 
+            // btnQLBA
+            // 
+            btnQLBA.Location = new Point(0, 192);
+            btnQLBA.Name = "btnQLBA";
+            btnQLBA.Size = new Size(201, 48);
+            btnQLBA.TabIndex = 2;
+            btnQLBA.Text = "Quản Lý Bàn Ăn";
+            btnQLBA.UseVisualStyleBackColor = true;
+            btnQLBA.Click += btnQLBA_Click;
+            // 
+            // btnDatBan
+            // 
+            btnDatBan.BackColor = SystemColors.Control;
+            btnDatBan.ForeColor = Color.FromArgb(255, 192, 255);
+            btnDatBan.Location = new Point(0, 138);
+            btnDatBan.Name = "btnDatBan";
+            btnDatBan.Size = new Size(201, 48);
+            btnDatBan.TabIndex = 1;
+            btnDatBan.Text = "Đặt Bàn";
+            btnDatBan.UseVisualStyleBackColor = false;
+            btnDatBan.Click += btnDatBan_Click;
+            // 
+            // btnQLMA
+            // 
+            btnQLMA.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnQLMA.ForeColor = Color.FromArgb(255, 192, 255);
+            btnQLMA.Location = new Point(0, 84);
+            btnQLMA.Name = "btnQLMA";
+            btnQLMA.Size = new Size(201, 48);
+            btnQLMA.TabIndex = 0;
+            btnQLMA.Text = "Quản Lý Món Ăn";
+            btnQLMA.UseVisualStyleBackColor = true;
+            btnQLMA.Click += btnQLMA_Click;
             // 
             // FormLoad
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(809, 476);
+            ClientSize = new Size(1019, 476);
+            Controls.Add(myPanel);
             Controls.Add(loadform);
-            Controls.Add(menuStrip1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            MainMenuStrip = menuStrip1;
             MaximizeBox = false;
             Name = "FormLoad";
             Text = "FormLoad";
             Load += FormLoad_Load;
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
+            myPanel.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem toolStripMenuItem1;
-        private ToolStripMenuItem tàiKhoảnToolStripMenuItem;
-        private ToolStripMenuItem đặtBànToolStripMenuItem;
-        private ToolStripMenuItem quảnToolStripMenuItem;
-        private ToolStripMenuItem quảnLíNhânViênToolStripMenuItem;
-        private ToolStripMenuItem quảnLíĐặtBànToolStripMenuItem;
-        private ToolStripMenuItem quảnLíHàngHóaToolStripMenuItem;
         private Panel loadform;
-        private ToolStripMenuItem quảnLýThựcĐơnToolStripMenuItem;
-        private ToolStripMenuItem quảnLýKhoToolStripMenuItem;
-        private ToolStripMenuItem quảnLíVoucherToolStripMenuItem;
-        private ToolStripMenuItem toolStripMenuItem2;
-        private ToolStripSeparator toolStripSeparator1;
+        private Panel myPanel;
+        private Button btnQLMA;
+        private Button btnNhanVien;
+        private Button btnKHO;
+        private Button btnTD;
+        private Button btnQLBA;
+        private Button btnDatBan;
     }
 }
