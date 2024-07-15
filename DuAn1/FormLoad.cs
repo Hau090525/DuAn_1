@@ -61,5 +61,20 @@ namespace DuAn1
         {
 
         }
+
+        private void quảnLýThựcĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            open(new QuanLiThucDon());
+        }
+
+        private void quảnLýKhoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            open(new Kho());
+        }
+
+        private void tàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            open(new TaiKhoan());
+        }
     }
 }
