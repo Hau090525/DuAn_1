@@ -12,9 +12,7 @@ namespace DuAn1
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new FormLoad());
-            //aaaaa
-            //hau daay
-           ///asdasdasd
+      
         }
     }
 }
