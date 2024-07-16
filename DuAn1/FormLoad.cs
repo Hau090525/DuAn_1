@@ -43,6 +43,7 @@ namespace DuAn1
             this.btnDatBan.Paint += new PaintEventHandler(this.button1_Paint);
             this.btnNhanVien.Paint += new PaintEventHandler(this.button1_Paint);
             this.btnQLBA.Paint += new PaintEventHandler(this.button1_Paint);
+            this.btnHoaDon.Paint += new PaintEventHandler(this.button1_Paint);
 
 
 
