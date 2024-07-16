@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             menuStrip1 = new MenuStrip();
-            dataGridView1 = new DataGridView();
+            dgvLoad = new DataGridView();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
@@ -48,7 +48,7 @@
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             label7 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvLoad).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -59,13 +59,13 @@
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
-            // dataGridView1
+            // dgvLoad
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(62, 280);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(689, 150);
-            dataGridView1.TabIndex = 29;
+            dgvLoad.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvLoad.Location = new Point(62, 280);
+            dgvLoad.Name = "dgvLoad";
+            dgvLoad.Size = new Size(689, 150);
+            dgvLoad.TabIndex = 29;
             // 
             // label5
             // 
@@ -233,7 +233,7 @@
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(label6);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvLoad);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -252,7 +252,8 @@
             MainMenuStrip = menuStrip1;
             Name = "Kho";
             Text = "Kho";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += Kho_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvLoad).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -260,7 +261,7 @@
         #endregion
 
         private MenuStrip menuStrip1;
-        private DataGridView dataGridView1;
+        private DataGridView dgvLoad;
         private Label label5;
         private Label label4;
         private Label label3;

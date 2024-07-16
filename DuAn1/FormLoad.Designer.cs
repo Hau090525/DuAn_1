@@ -30,6 +30,7 @@
         {
             loadform = new Panel();
             myPanel = new Panel();
+            btnHoaDon = new Button();
             btnNhanVien = new Button();
             btnKHO = new Button();
             btnTD = new Button();
@@ -52,6 +53,7 @@
             // myPanel
             // 
             myPanel.BackColor = SystemColors.Control;
+            myPanel.Controls.Add(btnHoaDon);
             myPanel.Controls.Add(btnNhanVien);
             myPanel.Controls.Add(btnKHO);
             myPanel.Controls.Add(btnTD);
@@ -66,11 +68,20 @@
             myPanel.Size = new Size(201, 476);
             myPanel.TabIndex = 2;
             // 
+            // btnHoaDon
+            // 
+            btnHoaDon.Location = new Point(0, 395);
+            btnHoaDon.Name = "btnHoaDon";
+            btnHoaDon.Size = new Size(201, 49);
+            btnHoaDon.TabIndex = 6;
+            btnHoaDon.Text = "Hóa Đơn";
+            btnHoaDon.UseVisualStyleBackColor = true;
+            // 
             // btnNhanVien
             // 
-            btnNhanVien.Location = new Point(0, 354);
+            btnNhanVien.Location = new Point(0, 340);
             btnNhanVien.Name = "btnNhanVien";
-            btnNhanVien.Size = new Size(201, 48);
+            btnNhanVien.Size = new Size(201, 49);
             btnNhanVien.TabIndex = 5;
             btnNhanVien.Text = "Quản Lý Nhân Viên";
             btnNhanVien.UseVisualStyleBackColor = true;
@@ -78,7 +89,7 @@
             // 
             // btnKHO
             // 
-            btnKHO.Location = new Point(0, 300);
+            btnKHO.Location = new Point(0, 286);
             btnKHO.Name = "btnKHO";
             btnKHO.Size = new Size(201, 48);
             btnKHO.TabIndex = 4;
@@ -88,7 +99,7 @@
             // 
             // btnTD
             // 
-            btnTD.Location = new Point(0, 246);
+            btnTD.Location = new Point(0, 232);
             btnTD.Name = "btnTD";
             btnTD.Size = new Size(201, 48);
             btnTD.TabIndex = 3;
@@ -98,7 +109,7 @@
             // 
             // btnQLBA
             // 
-            btnQLBA.Location = new Point(0, 192);
+            btnQLBA.Location = new Point(0, 178);
             btnQLBA.Name = "btnQLBA";
             btnQLBA.Size = new Size(201, 48);
             btnQLBA.TabIndex = 2;
@@ -110,7 +121,7 @@
             // 
             btnDatBan.BackColor = SystemColors.Control;
             btnDatBan.ForeColor = Color.FromArgb(255, 192, 255);
-            btnDatBan.Location = new Point(0, 138);
+            btnDatBan.Location = new Point(0, 124);
             btnDatBan.Name = "btnDatBan";
             btnDatBan.Size = new Size(201, 48);
             btnDatBan.TabIndex = 1;
@@ -122,7 +133,7 @@
             // 
             btnQLMA.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnQLMA.ForeColor = Color.FromArgb(255, 192, 255);
-            btnQLMA.Location = new Point(0, 84);
+            btnQLMA.Location = new Point(0, 70);
             btnQLMA.Name = "btnQLMA";
             btnQLMA.Size = new Size(201, 48);
             btnQLMA.TabIndex = 0;
@@ -155,5 +166,6 @@
         private Button btnTD;
         private Button btnQLBA;
         private Button btnDatBan;
+        private Button btnHoaDon;
     }
 }
