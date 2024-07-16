@@ -1,16 +1,17 @@
 ﻿using System;
 using DAL;
+using DTO.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DTO.Models;
+
 
 namespace BLL
 {
     public class KhoBLL
     {
-        Nguyenlieu nguyenlieu=new Nguyenlieu();
+        Nguyenlieu nguyenlieu = new Nguyenlieu();
         Kho kho = new Kho();
         KhoDAL khoDAL = new KhoDAL();
 

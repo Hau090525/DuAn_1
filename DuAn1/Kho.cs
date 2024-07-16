@@ -46,7 +46,7 @@ namespace DuAn1
                         y.h.IdNl,
                         y.h.TenNl,
                         y.h.DonGia,
-                        khos = khos != null ? khos.SoLuongTon : (int?)null, // Chuyển đổi về nullable int
+                        khos = khos != null ? khos.SoLuongTon : (int?)null, 
                         y.h.DonViTinh,
                     }
                 ).ToList();
@@ -57,9 +57,9 @@ namespace DuAn1
                 dr["ID"] = t.IdNl;
                 dr["Tên"] = t.TenNl;
                 dr["Đơn Giá"] = t.DonGia;
-                dr["Số Lượng"] = t.khos ?? 0; // Sử dụng 0 nếu khos là null
+                dr["Số Lượng"] = t.khos ?? 0; 
                 dr["Đơn Vị Tính"] = t.DonViTinh;
-                dt.Rows.Add(dr); // Thêm DataRow vào DataTable
+                dt.Rows.Add(dr); 
             }
 
             dgvLoad.DataSource = dt;
