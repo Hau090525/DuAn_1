@@ -137,7 +137,7 @@
             btnQLMA.Name = "btnQLMA";
             btnQLMA.Size = new Size(201, 48);
             btnQLMA.TabIndex = 0;
-            btnQLMA.Text = "Quản Lý Món Ăn";
+            btnQLMA.Text = "Tài Khoản";
             btnQLMA.UseVisualStyleBackColor = true;
             btnQLMA.Click += btnQLMA_Click;
             // 

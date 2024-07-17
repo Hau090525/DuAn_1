@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            dgvLoad = new DataGridView();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
@@ -36,7 +36,6 @@
             btnSua = new Button();
             btnXoa = new Button();
             btnThem = new Button();
-            cbbTrangthai = new ComboBox();
             txtMa = new TextBox();
             txtTen = new TextBox();
             button1 = new Button();
@@ -44,19 +43,22 @@
             label2 = new Label();
             label1 = new Label();
             label6 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtGia = new TextBox();
+            txtTrangThai = new TextBox();
             label7 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            txtLoai = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)dgvLoad).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgvLoad
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(56, 288);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(689, 150);
-            dataGridView1.TabIndex = 29;
+            dgvLoad.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvLoad.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvLoad.Location = new Point(56, 288);
+            dgvLoad.Name = "dgvLoad";
+            dgvLoad.Size = new Size(689, 150);
+            dgvLoad.TabIndex = 29;
+            dgvLoad.CellClick += dgvLoad_CellClick;
             // 
             // label5
             // 
@@ -106,6 +108,7 @@
             btnSua.TabIndex = 24;
             btnSua.Text = "Sửa";
             btnSua.UseVisualStyleBackColor = true;
+            btnSua.Click += btnSua_Click;
             // 
             // btnXoa
             // 
@@ -115,6 +118,7 @@
             btnXoa.TabIndex = 23;
             btnXoa.Text = "Xóa";
             btnXoa.UseVisualStyleBackColor = true;
+            btnXoa.Click += btnXoa_Click;
             // 
             // btnThem
             // 
@@ -124,14 +128,7 @@
             btnThem.TabIndex = 22;
             btnThem.Text = "Thêm";
             btnThem.UseVisualStyleBackColor = true;
-            // 
-            // cbbTrangthai
-            // 
-            cbbTrangthai.FormattingEnabled = true;
-            cbbTrangthai.Location = new Point(233, 229);
-            cbbTrangthai.Name = "cbbTrangthai";
-            cbbTrangthai.Size = new Size(375, 23);
-            cbbTrangthai.TabIndex = 21;
+            btnThem.Click += btnThem_Click;
             // 
             // txtMa
             // 
@@ -192,19 +189,19 @@
             label6.TabIndex = 30;
             label6.Text = "Giá thành";
             // 
-            // textBox1
+            // txtGia
             // 
-            textBox1.Location = new Point(233, 171);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(375, 23);
-            textBox1.TabIndex = 31;
+            txtGia.Location = new Point(233, 171);
+            txtGia.Name = "txtGia";
+            txtGia.Size = new Size(375, 23);
+            txtGia.TabIndex = 31;
             // 
-            // textBox2
+            // txtTrangThai
             // 
-            textBox2.Location = new Point(233, 200);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(375, 23);
-            textBox2.TabIndex = 32;
+            txtTrangThai.Location = new Point(233, 200);
+            txtTrangThai.Name = "txtTrangThai";
+            txtTrangThai.Size = new Size(375, 23);
+            txtTrangThai.TabIndex = 32;
             // 
             // label7
             // 
@@ -216,16 +213,24 @@
             label7.TabIndex = 33;
             label7.Text = "Trạng thái";
             // 
+            // txtLoai
+            // 
+            txtLoai.Location = new Point(233, 229);
+            txtLoai.Name = "txtLoai";
+            txtLoai.Size = new Size(375, 23);
+            txtLoai.TabIndex = 34;
+            // 
             // QuanLiThucDon
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtLoai);
             Controls.Add(label7);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtTrangThai);
+            Controls.Add(txtGia);
             Controls.Add(label6);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvLoad);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -233,7 +238,6 @@
             Controls.Add(btnSua);
             Controls.Add(btnXoa);
             Controls.Add(btnThem);
-            Controls.Add(cbbTrangthai);
             Controls.Add(txtMa);
             Controls.Add(txtTen);
             Controls.Add(button1);
@@ -242,14 +246,15 @@
             Controls.Add(label1);
             Name = "QuanLiThucDon";
             Text = "QuanLiThucDon";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += QuanLiThucDon_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvLoad).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dgvLoad;
         private Label label5;
         private Label label4;
         private Label label3;
@@ -265,8 +270,9 @@
         private Label label2;
         private Label label1;
         private Label label6;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtGia;
+        private TextBox txtTrangThai;
         private Label label7;
+        private TextBox txtLoai;
     }
 }
