@@ -90,7 +90,7 @@ namespace DuAn1
 
         private void btnQLMA_Click(object sender, EventArgs e)
         {
-            open(new QuanLiThucDon());
+            open(new TaiKhoan());
         }
 
         private void btnDatBan_Click(object sender, EventArgs e)
