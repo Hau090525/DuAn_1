@@ -14,7 +14,8 @@ public partial class Nguyenlieu
     public int IdKho { get; set; }
 
     public string? DonViTinh { get; set; }
-    public int SoLuong { get; set; }
 
-    public virtual Kho IdKhoNavigation { get; set; } = null!;
+    public int? SoLuong { get; set; }
+
+    public virtual ICollection<Monan> Monans { get; set; } = new List<Monan>();
 }

@@ -15,5 +15,9 @@ public partial class Monan
 
     public string? TrangThai { get; set; }
 
+    public int? IdNl { get; set; }
+
     public virtual ICollection<Hoadonchitiet> Hoadonchitiets { get; set; } = new List<Hoadonchitiet>();
+
+    public virtual Nguyenlieu? IdNlNavigation { get; set; }
 }
