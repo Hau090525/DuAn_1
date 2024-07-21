@@ -12,38 +12,39 @@ namespace DAL
 
         QlNhaHangContext dbcontex = new QlNhaHangContext();
 
-        Monan monan= new Monan();
+        Monan monan = new Monan();
 
         public List<Monan> getallmonan()
         {
-            var monan= dbcontex.Monans.ToList();
+            var monan = dbcontex.Monans.ToList();
             return monan;
         }
 
         public bool addmonan(Monan monan)
         {
-            dbcontex.Monans .Add(monan);
-            return dbcontex.SaveChanges()>0;
+            dbcontex.Monans.Add(monan);
+            return dbcontex.SaveChanges() > 0;
         }
         public bool updateMonAn(Monan monan)
         {
             var update = dbcontex.Monans.Find(monan.IdMonAn);
-            update.IdMonAn=monan.IdMonAn;
-            update.TenMon=monan.TenMon;
-            update.DonGia=monan.DonGia;
-            update.Loai=monan.Loai;
-            update.TrangThai=monan.TrangThai;
+            update.IdMonAn = monan.IdMonAn;
+            update.TenMon = monan.TenMon;
+            update.DonGia = monan.DonGia;
+            update.Loai = monan.Loai;
+            update.TrangThai = monan.TrangThai;
 
 
             dbcontex.Monans.Update(update);
-            return dbcontex.SaveChanges()>0;
+            return dbcontex.SaveChanges() > 0;
         }
-        public bool deleteMonan(int id)     
+        public bool deleteMonan(int id)
         {
             var delete = dbcontex.Monans.Find(id);
             dbcontex.Monans.Remove(delete);
-            return dbcontex.SaveChanges()>0;
+            return dbcontex.SaveChanges() > 0;
 
         }
     }
 }
+

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
+
 namespace DuAn1
 {
     public partial class QuanLiThucDon : Form
@@ -65,7 +66,7 @@ namespace DuAn1
         {
             int chon = e.RowIndex;
             var duocchon = dgvLoad.Rows[chon];
-            txtMa.Text = duocchon.Cells[0].Value.ToString();
+            txtLabel.Text = duocchon.Cells[0].Value.ToString();
             txtTen.Text = duocchon.Cells[1].Value.ToString();
             txtGia.Text = duocchon.Cells[2].Value.ToString();
             txtLoai.Text = duocchon.Cells[3].Value.ToString();
@@ -78,7 +79,7 @@ namespace DuAn1
             DialogResult kq = MessageBox.Show("ban co chac chan khong?", "them moi", MessageBoxButtons.YesNo);
             if (kq == DialogResult.Yes)
             {
-                string hau = thucdonBLL.add(Convert.ToInt32(txtMa.Text), txtTen.Text, Convert.ToDecimal(txtGia.Text), txtLoai.Text, txtTrangThai.Text);
+                string hau = thucdonBLL.add(Convert.ToInt32(txtLabel.Text), txtTen.Text, Convert.ToDecimal(txtGia.Text), txtLoai.Text, txtTrangThai.Text);
                 MessageBox.Show("them thanh cong");
                 loaddulieu();
             }
@@ -90,7 +91,7 @@ namespace DuAn1
             DialogResult kq = MessageBox.Show("ban co chac chan khong?", "them moi", MessageBoxButtons.YesNo);
             if (kq == DialogResult.Yes)
             {
-                string hau = thucdonBLL.update(Convert.ToInt32(txtMa.Text), txtTen.Text, Convert.ToDecimal(txtGia.Text), txtLoai.Text, txtTrangThai.Text);
+                string hau = thucdonBLL.update(Convert.ToInt32(txtLabel.Text), txtTen.Text, Convert.ToDecimal(txtGia.Text), txtLoai.Text, txtTrangThai.Text);
                 MessageBox.Show("Sua thanh cong");
                 loaddulieu();
             }
@@ -102,7 +103,7 @@ namespace DuAn1
             DialogResult kq = MessageBox.Show("ban co chac chan khong?", "Xoa ", MessageBoxButtons.YesNo);
             if (kq == DialogResult.Yes)
             {
-                string hau = thucdonBLL.delete(Convert.ToInt32(txtMa.Text));
+                string hau = thucdonBLL.delete(Convert.ToInt32(txtLabel.Text));
                 MessageBox.Show("Xoa thanh cong");
                 loaddulieu();
             }

@@ -26,5 +26,15 @@ namespace DuAn1
         {
 
         }
+
+        private void checkBox9_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DatBan_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
