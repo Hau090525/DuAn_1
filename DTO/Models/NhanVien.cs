@@ -25,7 +25,5 @@ public partial class NhanVien
 
     public virtual ICollection<NhanVien> InverseIdNqlNavigation { get; set; } = new List<NhanVien>();
 
-    public virtual ICollection<Kho> Khos { get; set; } = new List<Kho>();
-
     public virtual ICollection<Taikhoan> Taikhoans { get; set; } = new List<Taikhoan>();
 }
