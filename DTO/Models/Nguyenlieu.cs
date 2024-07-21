@@ -15,10 +15,7 @@ public partial class Nguyenlieu
 
     public string? DonViTinh { get; set; }
 
-<<<<<<< HEAD
-=======
     public int? SoLuong { get; set; }
 
->>>>>>> f2c9c63a17c8462f4f6fc049f0ae15c8392caca8
     public virtual ICollection<Monan> Monans { get; set; } = new List<Monan>();
 }

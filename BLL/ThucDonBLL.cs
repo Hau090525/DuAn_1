@@ -17,7 +17,7 @@ namespace BLL
         {
             return thucDonDAL.getallmonan().ToList();
         }
-        public string add(int id,string ten, decimal gia, string loai, string trangthai)
+        public string add(int id, string ten, decimal gia, string loai, string trangthai)
         {
             Monan monan = new Monan()
             {

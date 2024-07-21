@@ -17,7 +17,7 @@ namespace DuAn1
         {
             InitializeComponent();
         }
-        NhanVienBLL nhanVienBLL = new NhanVienBLL();
+        //NhanVienBLL nhanVienBLL = new NhanVienBLL();
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
