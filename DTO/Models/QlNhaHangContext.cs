@@ -35,7 +35,11 @@ public partial class QlNhaHangContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+<<<<<<< HEAD
         => optionsBuilder.UseSqlServer("Server=TANAKAR\\SQLEXPRESS;Database=QL_NHA_HANG;Trusted_Connection=True;TrustServerCertificate=true;");
+=======
+        => optionsBuilder.UseSqlServer("Server=QUOC-AN;Database=QL_NHA_HANG;User Id=SA;Password=123456;TrustServerCertificate=true;");
+>>>>>>> f2c9c63a17c8462f4f6fc049f0ae15c8392caca8
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
