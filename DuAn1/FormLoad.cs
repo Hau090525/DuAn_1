@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,6 +44,7 @@ namespace DuAn1
             this.btnDatBan.Paint += new PaintEventHandler(this.button1_Paint);
             this.btnNhanVien.Paint += new PaintEventHandler(this.button1_Paint);
             this.btnQLBA.Paint += new PaintEventHandler(this.button1_Paint);
+            this.btnHoaDon.Paint += new PaintEventHandler(this.button1_Paint);
 
 
 
@@ -109,7 +111,8 @@ namespace DuAn1
 
         private void btnKHO_Click(object sender, EventArgs e)
         {
-            open(new Kho());
+            Thongke thongke = new Thongke();
+            thongke.Show();
         }
 
         private void btnNhanVien_Click(object sender, EventArgs e)

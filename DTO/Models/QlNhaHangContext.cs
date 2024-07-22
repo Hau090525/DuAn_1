@@ -23,8 +23,6 @@ public partial class QlNhaHangContext : DbContext
 
     public virtual DbSet<Khachhang> Khachhangs { get; set; }
 
-    public virtual DbSet<Kho> Khos { get; set; }
-
     public virtual DbSet<Monan> Monans { get; set; }
 
     public virtual DbSet<Nguyenlieu> Nguyenlieus { get; set; }
@@ -37,7 +35,7 @@ public partial class QlNhaHangContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=QUOC-AN;Database=QL_NHA_HANG;User Id=SA;Password=123456;TrustServerCertificate=true;");
+        => optionsBuilder.UseSqlServer("Server=LAPTOP-G6B8K1EL\\SQLEXPRESS;Database=QL_NHA_HANG;Trusted_Connection=True;TrustServerCertificate=true;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -130,23 +128,6 @@ public partial class QlNhaHangContext : DbContext
                 .HasColumnName("TenKH");
         });
 
-        modelBuilder.Entity<Kho>(entity =>
-        {
-            entity.HasKey(e => e.IdKho).HasName("PK__KHO__2DF97C30F73864D9");
-
-            entity.ToTable("KHO");
-
-            entity.Property(e => e.IdKho)
-                .ValueGeneratedNever()
-                .HasColumnName("ID_Kho");
-            entity.Property(e => e.IdNv).HasColumnName("ID_NV");
-
-            entity.HasOne(d => d.IdNvNavigation).WithMany(p => p.Khos)
-                .HasForeignKey(d => d.IdNv)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_KHO_NHAN_VIEN");
-        });
-
         modelBuilder.Entity<Monan>(entity =>
         {
             entity.HasKey(e => e.IdMonAn).HasName("PK__MONAN__D0122A1CD3205904");
@@ -157,9 +138,14 @@ public partial class QlNhaHangContext : DbContext
                 .ValueGeneratedNever()
                 .HasColumnName("ID_MonAn");
             entity.Property(e => e.DonGia).HasColumnType("money");
+            entity.Property(e => e.IdNl).HasColumnName("ID_NL");
             entity.Property(e => e.Loai).HasMaxLength(30);
             entity.Property(e => e.TenMon).HasMaxLength(50);
             entity.Property(e => e.TrangThai).HasMaxLength(30);
+
+            entity.HasOne(d => d.IdNlNavigation).WithMany(p => p.Monans)
+                .HasForeignKey(d => d.IdNl)
+                .HasConstraintName("FK_MONAN_NGUYENLIEU");
         });
 
         modelBuilder.Entity<Nguyenlieu>(entity =>
@@ -177,11 +163,6 @@ public partial class QlNhaHangContext : DbContext
             entity.Property(e => e.TenNl)
                 .HasMaxLength(50)
                 .HasColumnName("TenNL");
-
-            entity.HasOne(d => d.IdKhoNavigation).WithMany(p => p.Nguyenlieus)
-                .HasForeignKey(d => d.IdKho)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_NGUYENLIEU_KHO");
         });
 
         modelBuilder.Entity<NhanVien>(entity =>

@@ -21,5 +21,10 @@ namespace DuAn1
         {
 
         }
+
+        private void TaiKhoan_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
