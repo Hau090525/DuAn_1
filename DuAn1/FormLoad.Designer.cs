@@ -48,7 +48,6 @@
             loadform.Name = "loadform";
             loadform.Size = new Size(809, 475);
             loadform.TabIndex = 1;
-            loadform.Paint += loadform_Paint;
             // 
             // myPanel
             // 
@@ -76,6 +75,7 @@
             btnHoaDon.TabIndex = 6;
             btnHoaDon.Text = "Hóa Đơn";
             btnHoaDon.UseVisualStyleBackColor = true;
+            btnHoaDon.Click += btnHoaDon_Click;
             // 
             // btnNhanVien
             // 
@@ -85,7 +85,6 @@
             btnNhanVien.TabIndex = 5;
             btnNhanVien.Text = "Quản Lý Nhân Viên";
             btnNhanVien.UseVisualStyleBackColor = true;
-            btnNhanVien.Click += btnNhanVien_Click;
             // 
             // btnKHO
             // 
@@ -95,7 +94,6 @@
             btnKHO.TabIndex = 4;
             btnKHO.Text = "Quản Lý Kho";
             btnKHO.UseVisualStyleBackColor = true;
-            btnKHO.Click += btnKHO_Click;
             // 
             // btnTD
             // 
@@ -115,7 +113,6 @@
             btnQLBA.TabIndex = 2;
             btnQLBA.Text = "Quản Lý Bàn Ăn";
             btnQLBA.UseVisualStyleBackColor = true;
-            btnQLBA.Click += btnQLBA_Click;
             // 
             // btnDatBan
             // 
@@ -127,7 +124,6 @@
             btnDatBan.TabIndex = 1;
             btnDatBan.Text = "Đặt Bàn";
             btnDatBan.UseVisualStyleBackColor = false;
-            btnDatBan.Click += btnDatBan_Click;
             // 
             // btnQLMA
             // 
@@ -139,7 +135,6 @@
             btnQLMA.TabIndex = 0;
             btnQLMA.Text = "Tài Khoản";
             btnQLMA.UseVisualStyleBackColor = true;
-            btnQLMA.Click += btnQLMA_Click;
             // 
             // FormLoad
             // 
