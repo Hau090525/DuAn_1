@@ -17,5 +17,8 @@ public partial class Voucher
 
     public int? Diem { get; set; }
 
+    public DateTime? StartDate { get; set; }
+    public DateTime? EndDate { get; set; }
+
     public virtual ICollection<Hoadon> Hoadons { get; set; } = new List<Hoadon>();
 }

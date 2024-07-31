@@ -272,6 +272,7 @@
             Controls.Add(label1);
             Name = "Quanlinhanvien";
             Text = "Quanlinhanvien";
+            Load += Quanlinhanvien_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

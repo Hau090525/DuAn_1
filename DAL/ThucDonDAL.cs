@@ -13,13 +13,18 @@ namespace DAL
         QlNhaHangContext dbcontex = new QlNhaHangContext();
 
         Monan monan = new Monan();
+        Nguyenlieu nguyenlieu = new Nguyenlieu();
 
         public List<Monan> getallmonan()
         {
             var monan = dbcontex.Monans.ToList();
             return monan;
         }
-
+        public List<Nguyenlieu> getallnguyenlieu()
+        {
+            var nl=dbcontex.Nguyenlieus.ToList();
+            return nl;
+        }
         public bool addmonan(Monan monan)
         {
             dbcontex.Monans.Add(monan);

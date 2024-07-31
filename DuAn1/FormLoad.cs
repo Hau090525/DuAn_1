@@ -15,9 +15,18 @@ namespace DuAn1
 {
     public partial class FormLoad : Form
     {
+        public FormLoad(string employeeName)
+        {
+            InitializeComponent();
+            this.employeeName = employeeName;
+            lbtennv.Text = $"{this.employeeName}";
+        }
+
+        private string employeeName;
         public FormLoad()
         {
             InitializeComponent();
+
         }
         private Form currentFormChild;
         private void open(Form childFrom)
@@ -39,7 +48,7 @@ namespace DuAn1
         {
             myPanel.Paint += new PaintEventHandler(MyPanel_Paint);
             this.btnQLMA.Paint += new PaintEventHandler(this.button1_Paint);
-            this.btnKHO.Paint += new PaintEventHandler(this.button1_Paint);
+            this.btnTK.Paint += new PaintEventHandler(this.button1_Paint);
 
             this.btnTD.Paint += new PaintEventHandler(this.button1_Paint);
             this.btnDatBan.Paint += new PaintEventHandler(this.button1_Paint);
@@ -54,42 +63,42 @@ namespace DuAn1
 
 
         private void MyPanel_Paint(object sender, PaintEventArgs e)
-    {
-        Panel panel = sender as Panel;
-        if (panel != null)
         {
-            // Vẽ gradient màu từ hồng sang tím
-            using (LinearGradientBrush brush = new LinearGradientBrush(panel.ClientRectangle, Color.FromArgb(216, 90, 144), Color.FromArgb(68, 55, 146), 90F))
+            Panel panel = sender as Panel;
+            if (panel != null)
             {
-                e.Graphics.FillRectangle(brush, panel.ClientRectangle);
+                // Vẽ gradient màu từ hồng sang tím
+                using (LinearGradientBrush brush = new LinearGradientBrush(panel.ClientRectangle, Color.FromArgb(216, 90, 144), Color.FromArgb(68, 55, 146), 90F))
+                {
+                    e.Graphics.FillRectangle(brush, panel.ClientRectangle);
+                }
             }
         }
-    }
-    private void button1_Paint(object sender, PaintEventArgs e)
-    {
-        Button button = sender as Button;
-        if (button != null)
+        private void button1_Paint(object sender, PaintEventArgs e)
         {
-            // Vẽ gradient màu từ hồng sang tím
-            using (LinearGradientBrush brush = new LinearGradientBrush(button.ClientRectangle, Color.FromArgb(243, 129, 175), Color.FromArgb(123, 75, 187), 90F))
+            Button button = sender as Button;
+            if (button != null)
             {
-                e.Graphics.FillRectangle(brush, button.ClientRectangle);
-            }
+                // Vẽ gradient màu từ hồng sang tím
+                using (LinearGradientBrush brush = new LinearGradientBrush(button.ClientRectangle, Color.FromArgb(243, 129, 175), Color.FromArgb(123, 75, 187), 90F))
+                {
+                    e.Graphics.FillRectangle(brush, button.ClientRectangle);
+                }
 
-            // Vẽ viền button (nếu cần)
-            using (Pen pen = new Pen(Color.FromArgb(243, 129, 175)))
-            {
-                e.Graphics.DrawRectangle(pen, 0, 0, button.Width - 1, button.Height - 1);
-            }
+                // Vẽ viền button (nếu cần)
+                using (Pen pen = new Pen(Color.FromArgb(243, 129, 175)))
+                {
+                    e.Graphics.DrawRectangle(pen, 0, 0, button.Width - 1, button.Height - 1);
+                }
 
-            // Vẽ lại văn bản với màu trắng hoặc màu tương phản để đảm bảo dễ đọc
-            TextRenderer.DrawText(e.Graphics, button.Text, button.Font, button.ClientRectangle, Color.White, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+                // Vẽ lại văn bản với màu trắng hoặc màu tương phản để đảm bảo dễ đọc
+                TextRenderer.DrawText(e.Graphics, button.Text, button.Font, button.ClientRectangle, Color.White, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+            }
         }
-    }
 
 
 
-    private void btnHoaDon_Click(object sender, EventArgs e)
+        private void btnHoaDon_Click(object sender, EventArgs e)
         {
             open(new QLHD());
         }
@@ -97,6 +106,34 @@ namespace DuAn1
         private void btnTD_Click(object sender, EventArgs e)
         {
             open(new QuanLiThucDon());
+        }
+
+        private void btnDatBan_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn đã có tài khoản khách hàng chưa?", "Xác nhận", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.No)
+            {
+                var themKhachHangForm = new ThemKhachHang();
+                if (themKhachHangForm.ShowDialog() == DialogResult.OK)
+                {
+                  
+
+                    var datBanForm = new DatBan(this.employeeName);
+                    open(datBanForm);
+                }
+            }
+            else
+            {
+                
+                var datBanForm = new DatBan(this.employeeName);
+                open(datBanForm);
+            }
+        }
+
+        private void loadform_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 

@@ -20,8 +20,8 @@ namespace DuAn1
             label2.ForeColor = Color.White;
             lbDoi.BackColor = Color.Transparent;
             lbDoi.ForeColor = Color.White;
-            open(new DangKy());
-            btnDangKY.Visible = false;
+            open(new DangNhap());
+            btnDangKY.Visible = true;
         }
 
         private void MyPanel_Paint(object sender, PaintEventArgs e)

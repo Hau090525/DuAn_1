@@ -23,6 +23,8 @@ public partial class Hoadon
 
     public string? TrangThai { get; set; }
 
+    public int? IdNv { get; set; }
+
     public virtual Voucher? CodeVoucherNavigation { get; set; }
 
     public virtual ICollection<Hoadonchitiet> Hoadonchitiets { get; set; } = new List<Hoadonchitiet>();
@@ -30,4 +32,6 @@ public partial class Hoadon
     public virtual Ban IdBanNavigation { get; set; } = null!;
 
     public virtual Khachhang IdKhNavigation { get; set; } = null!;
+
+    public virtual NhanVien? IdNvNavigation { get; set; }
 }

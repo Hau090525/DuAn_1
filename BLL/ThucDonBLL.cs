@@ -12,10 +12,15 @@ namespace BLL
     {
         ThucDonDAL thucDonDAL = new ThucDonDAL();
         Monan monan = new Monan();
+        Nguyenlieu nguyenlieu=new Nguyenlieu();
 
         public List<Monan> getallmonan()
         {
             return thucDonDAL.getallmonan().ToList();
+        }
+        public List<Nguyenlieu> getallnl()
+        {
+            return thucDonDAL.getallnguyenlieu().ToList();
         }
         public string add(int id, string ten, decimal gia, string loai, string trangthai)
         {

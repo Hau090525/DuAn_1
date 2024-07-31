@@ -21,17 +21,13 @@ namespace BLL
 
 
         }
-        public List<NhanVien> getAllNhanVien()
+        public List<Ban> getBan()
         {
-            return qlhdDAL.getallnhanvien().ToList();
+            return qlhdDAL.getban().ToList();
 
 
         }
-        public Khachhang GetKhachhang(int idkh)
-        {
-            return qlhdDAL.GetKhachhang(idkh);
-        }
-        public List<NhanVien> getAllnhanvien()
+       public List<NhanVien> getallnv()
         {
             return qlhdDAL.getallNV().ToList();
         }
@@ -48,6 +44,10 @@ namespace BLL
 
             }
             else return "thanh toan that bai";
+        }
+        public void UpdateBanStatus(int idBan, string trangThai)
+        {
+            qlhdDAL.UpdateBanStatus(idBan, trangThai);
         }
     }
 }

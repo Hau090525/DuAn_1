@@ -16,5 +16,10 @@ namespace DuAn1
         {
             InitializeComponent();
         }
+
+        private void Quanlinhanvien_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
