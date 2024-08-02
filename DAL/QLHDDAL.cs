@@ -11,18 +11,8 @@ namespace DAL
     public class QLHDDAL
     {
         QlNhaHangContext dbcontext = new QlNhaHangContext();
-        Hoadon hoadon = new Hoadon();
-        Hoadonchitiet hdct = new Hoadonchitiet();
-        Monan monan = new Monan();
-        Ban ban = new Ban();
-        Voucher voucher = new Voucher();
-        Khachhang khachhang = new Khachhang();
-        NhanVien nhanVien = new NhanVien();
-
-        public List<NhanVien> getallnhanvien()
-        {
-            return dbcontext.NhanViens.ToList();
-        }
+        
+      
         public List<Ban> getban()
         {
             return dbcontext.Bans.ToList();
@@ -39,10 +29,7 @@ namespace DAL
         {
             return dbcontext.NhanViens.ToList();
         }
-        public Khachhang GetKhachhang(int idkh)
-        {
-            return dbcontext.Khachhangs.FirstOrDefault(kh => kh.IdKh == idkh);
-        }
+       
         public bool update(Hoadon hoadon)
         {
             var update = dbcontext.Hoadons.Find(hoadon.IdHoaDon);

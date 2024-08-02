@@ -33,23 +33,25 @@
             txtemaillogin = new TextBox();
             txtmklogin = new TextBox();
             label4 = new Label();
+            label5 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(label5);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(txtemaillogin);
             panel1.Controls.Add(txtmklogin);
             panel1.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             panel1.Location = new Point(44, 88);
             panel1.Name = "panel1";
-            panel1.Size = new Size(352, 142);
+            panel1.Size = new Size(352, 168);
             panel1.TabIndex = 6;
             // 
             // button1
             // 
-            button1.Location = new Point(93, 87);
+            button1.Location = new Point(78, 87);
             button1.Name = "button1";
             button1.Size = new Size(169, 37);
             button1.TabIndex = 5;
@@ -81,6 +83,17 @@
             label4.TabIndex = 7;
             label4.Text = "ĐĂNG NHẬP";
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.ForeColor = Color.Blue;
+            label5.Location = new Point(103, 127);
+            label5.Name = "label5";
+            label5.Size = new Size(123, 20);
+            label5.TabIndex = 6;
+            label5.Text = "Quên mật khẩu?";
+            label5.Click += label5_Click;
+            // 
             // DangNhap
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -110,5 +123,6 @@
         private Label label1;
         private PictureBox pictureBox1;
         private Label label4;
+        private Label label5;
     }
 }

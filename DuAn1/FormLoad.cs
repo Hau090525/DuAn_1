@@ -23,11 +23,7 @@ namespace DuAn1
         }
 
         private string employeeName;
-        public FormLoad()
-        {
-            InitializeComponent();
-
-        }
+       
         private Form currentFormChild;
         private void open(Form childFrom)
         {

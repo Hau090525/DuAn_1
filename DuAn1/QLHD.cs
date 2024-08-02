@@ -19,12 +19,14 @@ using DTO.Models;
 using static System.Net.Mime.MediaTypeNames;
 using iText.Kernel.Font;
 using iText.Layout.Properties;
+using DuAn1;
 
 
 namespace GUI
 {
     public partial class QLHD : Form
     {
+        public string EmployeeName { get; set; }
         public QLHD()
         {
             InitializeComponent();
@@ -36,6 +38,7 @@ namespace GUI
 
         private void QLHD_Load(object sender, EventArgs e)
         {
+
             cbbTrangThai.Items.Add("Đã thanh toán");
             cbbTrangThai.Items.Add("Chưa thanh toán");
             if (dt.Columns.Count == 0)
@@ -45,6 +48,7 @@ namespace GUI
                 dt.Columns.Add("IdKh", typeof(int));
                 dt.Columns.Add("TenMonAn", typeof(string));
                 dt.Columns.Add("TongTien", typeof(decimal));
+                dt.Columns.Add("TienGiam", typeof(decimal));
 
                 dt.Columns.Add("NgayHoaDon", typeof(DateOnly));
                 dt.Columns.Add("TrangThai", typeof(string));
@@ -66,13 +70,13 @@ namespace GUI
             }
             loaddulieu();
            
-            dgvHoaDon.DataSource = dt;
+            
             dgvXuat.DataSource = dthd;
 
         }
         public void loaddulieu()
         {
-            dt.Rows.Clear();
+           
             var result = from hd in hoaDonBLL.getAllHD()
                          
                          join nv   in hoaDonBLL.getallnv()
@@ -83,10 +87,12 @@ namespace GUI
                              hd.IdKh,
                              hd.TenMonAn,
                              hd.TongTien,
+                             hd.TienGiam,
                              hd.NgayHoaDon,
                              hd.TrangThai,
                              nv.TenNv,
                          };
+            dt.Rows.Clear();
             foreach (var item in result)
             {
                 DataRow dr = dt.NewRow();
@@ -95,6 +101,7 @@ namespace GUI
                 dr["IdKh"] = item.IdKh;
                 dr["TenMonAn"] = item.TenMonAn != null ? (object)item.TenMonAn : DBNull.Value;
                 dr["TongTien"] = item.TongTien.HasValue ? (object)item.TongTien.Value : DBNull.Value;
+                dr["TienGiam"] = item.TienGiam.HasValue ? (object)item.TienGiam.Value : DBNull.Value;
 
                 dr["NgayHoaDon"] = item.NgayHoaDon;
                 dr["TrangThai"] = item.TrangThai;
@@ -102,6 +109,8 @@ namespace GUI
                
                 dt.Rows.Add(dr);
             }
+            dgvHoaDon.DataSource = dt;
+            dgvHoaDon.Refresh();
         }
         public void loaddulieuloc(string trangthai)//, DateOnly ngaytu, DateOnly ngayden)
         {
@@ -134,11 +143,19 @@ namespace GUI
                 dt.Rows.Add(dr);
             }
         }
-       
+
+
+        public void ReloadForm()
+        {
+            this.Hide();
+            QLHD newForm = new QLHD();
+            newForm.Show();
+            this.Close(); // Đóng form hiện tại nếu không cần thiết nữa
+        }
 
         private void btnQuayLai_Click(object sender, EventArgs e)
         {
-            loaddulieu();
+            ReloadForm();
             dthd.Rows.Clear();
         }
 
@@ -216,34 +233,32 @@ namespace GUI
 
                     if (result == DialogResult.Yes)
                     {
-                       
-                       
 
-                        
 
-                        int idHD = (int)selectedRow.Cells["IdHoaDon"].Value;
-                        decimal Ttien = Convert.ToDecimal(selectedRow.Cells["TongTien"].Value);
-
-                        voucher paymentForm = new voucher(idHD, Ttien);
-                        paymentForm.PaymentConfirmed += OnPaymentConfirmed;
-                        paymentForm.ShowDialog();
+                        var voucherForm = new voucher(idHoaDon, tongTien,EmployeeName);
+                        voucherForm.FormClosed += (s, e) => loaddulieu();
+                        voucherForm.ShowDialog();
+                        FormLoad form = new FormLoad(EmployeeName);
+                        this.Close();
                     }
                 }
 
             }
         }
-        private void OnPaymentConfirmed(int idHoaDon)
-        {
-            // Tìm hàng đã chọn trong DataGridView và cập nhật trạng thái
-            foreach (DataGridViewRow row in dgvHoaDon.Rows)
-            {
-                if ((int)row.Cells["IdHoaDon"].Value == idHoaDon)
-                {
-                    row.Cells["TrangThai"].Value = "Đã thanh toán";
-                    break;
-                }
-            }
-        }
+        
+        //private void OnPaymentConfirmed(int idHoaDon)
+        //{
+        //    // Tìm hàng đã chọn trong DataGridView và cập nhật trạng thái
+        //    foreach (DataGridViewRow row in dgvHoaDon.Rows)
+        //    {
+        //        if ((int)row.Cells["IdHoaDon"].Value == idHoaDon)
+        //        {
+        //            row.Cells["TrangThai"].Value = "Đã thanh toán";
+        //            break;
+        //        }
+        //    }
+        //    loaddulieu();
+        //}
         public void CreateInvoicePDF(DataGridView dataGridView, string filePath)
         {
             using (PdfWriter writer = new PdfWriter(filePath))

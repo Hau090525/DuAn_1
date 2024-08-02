@@ -1,4 +1,5 @@
 ﻿using DTO.Models;
+using DuAn1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,12 +14,14 @@ namespace GUI
 {
     public partial class voucher : Form
     {
+        public string EmployeeName { get; set; }
+
         public event Action<int>? PaymentConfirmed;
         private int _idHoaDon;
         private decimal _tongTien;
         private decimal _tienGiam;
         private decimal _tongtienSauGiam;
-        public voucher(int idHoaDon, decimal tongTien)
+        public voucher(int idHoaDon, decimal tongTien, string employeeName)
         {
             InitializeComponent();
             _idHoaDon = idHoaDon;
@@ -26,6 +29,7 @@ namespace GUI
             lblTongTien.Text = _tongTien.ToString("N0") + " VND";
 
             LoadVouchers();
+            EmployeeName = employeeName;
         }
 
         private void LoadVouchers()
@@ -96,10 +100,7 @@ namespace GUI
             }
 
             MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            if (_idHoaDon > 0) // hoặc bất kỳ điều kiện nào phù hợp với ứng dụng của bạn
-            {
-                PaymentConfirmed?.Invoke(_idHoaDon);
-            } // Kích hoạt sự kiện khi thanh toán thành công
+          
             this.Close();
         }
         private decimal ApplyVoucher(string voucherCode)
