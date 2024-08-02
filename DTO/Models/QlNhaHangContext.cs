@@ -68,6 +68,7 @@ public partial class QlNhaHangContext : DbContext
                 .HasColumnName("Code_Voucher");
             entity.Property(e => e.IdBan).HasColumnName("ID_Ban");
             entity.Property(e => e.IdKh).HasColumnName("ID_KH");
+            entity.Property(e => e.IdNv).HasColumnName("ID_NV");
             entity.Property(e => e.TenMonAn).HasMaxLength(50);
             entity.Property(e => e.TienGiam).HasColumnType("money");
             entity.Property(e => e.TongTien).HasColumnType("money");
@@ -86,6 +87,10 @@ public partial class QlNhaHangContext : DbContext
                 .HasForeignKey(d => d.IdKh)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_HOADON_KHACHHANG");
+
+            entity.HasOne(d => d.IdNvNavigation).WithMany(p => p.Hoadons)
+                .HasForeignKey(d => d.IdNv)
+                .HasConstraintName("FK_HOADON_NHANVIEN");
         });
 
         modelBuilder.Entity<Hoadonchitiet>(entity =>

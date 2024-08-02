@@ -83,9 +83,9 @@
             lbDoi.ForeColor = SystemColors.ActiveCaptionText;
             lbDoi.Location = new Point(83, 345);
             lbDoi.Name = "lbDoi";
-            lbDoi.Size = new Size(113, 15);
+            lbDoi.Size = new Size(99, 15);
             lbDoi.TabIndex = 3;
-            lbDoi.Text = "Vui lòng đăng nhập";
+            lbDoi.Text = "Vui lòng đăng ký";
             // 
             // label2
             // 
@@ -121,9 +121,9 @@
             // 
             // loadform
             // 
-            loadform.Location = new Point(360, 129);
+            loadform.Location = new Point(343, 108);
             loadform.Name = "loadform";
-            loadform.Size = new Size(374, 197);
+            loadform.Size = new Size(415, 286);
             loadform.TabIndex = 0;
             // 
             // Form1

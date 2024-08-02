@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLoad));
             loadform = new Panel();
             myPanel = new Panel();
+            lbtennv = new Label();
             btnHoaDon = new Button();
             btnNhanVien = new Button();
-            btnKHO = new Button();
+            btnTK = new Button();
             btnTD = new Button();
             btnQLBA = new Button();
             btnDatBan = new Button();
@@ -48,13 +50,15 @@
             loadform.Name = "loadform";
             loadform.Size = new Size(809, 475);
             loadform.TabIndex = 1;
+            loadform.Paint += loadform_Paint;
             // 
             // myPanel
             // 
             myPanel.BackColor = SystemColors.Control;
+            myPanel.Controls.Add(lbtennv);
             myPanel.Controls.Add(btnHoaDon);
             myPanel.Controls.Add(btnNhanVien);
-            myPanel.Controls.Add(btnKHO);
+            myPanel.Controls.Add(btnTK);
             myPanel.Controls.Add(btnTD);
             myPanel.Controls.Add(btnQLBA);
             myPanel.Controls.Add(btnDatBan);
@@ -66,6 +70,18 @@
             myPanel.Name = "myPanel";
             myPanel.Size = new Size(201, 476);
             myPanel.TabIndex = 2;
+            // 
+            // lbtennv
+            // 
+            lbtennv.AutoSize = true;
+            lbtennv.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lbtennv.ForeColor = Color.FromArgb(255, 128, 255);
+            lbtennv.Image = (Image)resources.GetObject("lbtennv.Image");
+            lbtennv.Location = new Point(40, 33);
+            lbtennv.Name = "lbtennv";
+            lbtennv.Size = new Size(117, 21);
+            lbtennv.TabIndex = 7;
+            lbtennv.Text = "Tên nhân viên";
             // 
             // btnHoaDon
             // 
@@ -86,14 +102,14 @@
             btnNhanVien.Text = "Quản Lý Nhân Viên";
             btnNhanVien.UseVisualStyleBackColor = true;
             // 
-            // btnKHO
+            // btnTK
             // 
-            btnKHO.Location = new Point(0, 286);
-            btnKHO.Name = "btnKHO";
-            btnKHO.Size = new Size(201, 48);
-            btnKHO.TabIndex = 4;
-            btnKHO.Text = "Quản Lý Kho";
-            btnKHO.UseVisualStyleBackColor = true;
+            btnTK.Location = new Point(0, 286);
+            btnTK.Name = "btnTK";
+            btnTK.Size = new Size(201, 48);
+            btnTK.TabIndex = 4;
+            btnTK.Text = "Quản Lý Doanh Thu";
+            btnTK.UseVisualStyleBackColor = true;
             // 
             // btnTD
             // 
@@ -124,6 +140,7 @@
             btnDatBan.TabIndex = 1;
             btnDatBan.Text = "Đặt Bàn";
             btnDatBan.UseVisualStyleBackColor = false;
+            btnDatBan.Click += btnDatBan_Click;
             // 
             // btnQLMA
             // 
@@ -149,6 +166,7 @@
             Text = "FormLoad";
             Load += FormLoad_Load;
             myPanel.ResumeLayout(false);
+            myPanel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -157,10 +175,11 @@
         private Panel myPanel;
         private Button btnQLMA;
         private Button btnNhanVien;
-        private Button btnKHO;
+        private Button btnTK;
         private Button btnTD;
         private Button btnQLBA;
         private Button btnDatBan;
         private Button btnHoaDon;
+        private Label lbtennv;
     }
 }

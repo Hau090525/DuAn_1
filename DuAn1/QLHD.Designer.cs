@@ -36,8 +36,6 @@
             btnQuayLai = new Button();
             btnLoc = new Button();
             label3 = new Label();
-            dgvKhachHang = new DataGridView();
-            label4 = new Label();
             label5 = new Label();
             btnXuat = new Button();
             dgvXuat = new DataGridView();
@@ -45,7 +43,6 @@
             ngaysauu = new DateTimePicker();
             label7 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvHoaDon).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgvKhachHang).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvXuat).BeginInit();
             SuspendLayout();
             // 
@@ -94,6 +91,7 @@
             cbbTrangThai.Name = "cbbTrangThai";
             cbbTrangThai.Size = new Size(200, 23);
             cbbTrangThai.TabIndex = 4;
+            cbbTrangThai.TextChanged += cbbTrangThai_TextChanged;
             // 
             // btnQuayLai
             // 
@@ -125,25 +123,6 @@
             label3.TabIndex = 7;
             label3.Text = "Thông Tin Hóa Đơn";
             // 
-            // dgvKhachHang
-            // 
-            dgvKhachHang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvKhachHang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvKhachHang.Location = new Point(0, 302);
-            dgvKhachHang.Name = "dgvKhachHang";
-            dgvKhachHang.Size = new Size(443, 78);
-            dgvKhachHang.TabIndex = 8;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label4.Location = new Point(0, 278);
-            label4.Name = "label4";
-            label4.Size = new Size(149, 21);
-            label4.TabIndex = 9;
-            label4.Text = "Thông Tin Chi Tiết";
-            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -168,16 +147,16 @@
             // 
             dgvXuat.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvXuat.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvXuat.Location = new Point(449, 302);
+            dgvXuat.Location = new Point(0, 302);
             dgvXuat.Name = "dgvXuat";
-            dgvXuat.Size = new Size(346, 78);
+            dgvXuat.Size = new Size(795, 147);
             dgvXuat.TabIndex = 12;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label6.Location = new Point(449, 278);
+            label6.Location = new Point(0, 278);
             label6.Name = "label6";
             label6.Size = new Size(116, 21);
             label6.TabIndex = 13;
@@ -212,8 +191,6 @@
             Controls.Add(dgvXuat);
             Controls.Add(btnXuat);
             Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(dgvKhachHang);
             Controls.Add(label3);
             Controls.Add(btnLoc);
             Controls.Add(btnQuayLai);
@@ -226,7 +203,6 @@
             Text = "QLHD";
             Load += QLHD_Load;
             ((System.ComponentModel.ISupportInitialize)dgvHoaDon).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvKhachHang).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvXuat).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -242,8 +218,6 @@
         private Button btnQuayLai;
         private Button btnLoc;
         private Label label3;
-        private DataGridView dgvKhachHang;
-        private Label label4;
         private Label label5;
         private Button btnXuat;
         private DataGridView dgvXuat;

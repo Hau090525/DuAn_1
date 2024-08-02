@@ -21,6 +21,8 @@ public partial class NhanVien
 
     public string? TinhTrang { get; set; }
 
+    public virtual ICollection<Hoadon> Hoadons { get; set; } = new List<Hoadon>();
+
     public virtual NhanVien IdNqlNavigation { get; set; } = null!;
 
     public virtual ICollection<NhanVien> InverseIdNqlNavigation { get; set; } = new List<NhanVien>();

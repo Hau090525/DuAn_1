@@ -13,41 +13,19 @@ namespace BLL
         QLHDDAL qlhdDAL = new QLHDDAL();
         public List<Hoadon> getAllHD()
         {
-            return qlhdDAL.getallHD().ToList();
+            return qlhdDAL.getallHD();
         }
         public List<Khachhang> getAllKhachhang()
         {
-            return qlhdDAL.getallKH().ToList();
+            return qlhdDAL.getallKH();
 
 
         }
-        public List<NhanVien> getAllNhanVien()
-        {
-            return qlhdDAL.getallnhanvien().ToList();
-
-
-        }
-        public Khachhang GetKhachhang(int idkh)
-        {
-            return qlhdDAL.GetKhachhang(idkh);
-        }
-        public List<NhanVien> getAllnhanvien()
+      
+       public List<NhanVien> getallnv()
         {
             return qlhdDAL.getallNV().ToList();
         }
-        public string update(int id,string trangthai)
-        {
-            Hoadon hoadon = new Hoadon()
-            {
-                IdHoaDon = id,
-                TrangThai = trangthai,
-            };
-            if (qlhdDAL.update(hoadon))
-            {
-                return "thanh toan thanh cong";
-
-            }
-            else return "thanh toan that bai";
-        }
+        
     }
 }
