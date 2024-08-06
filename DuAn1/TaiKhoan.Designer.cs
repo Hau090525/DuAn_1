@@ -30,18 +30,20 @@
         {
             label1 = new Label();
             label8 = new Label();
-            cbbChucVu = new ComboBox();
+            cbbEmail = new ComboBox();
             label7 = new Label();
-            txtTinhTrang = new TextBox();
+            txtTrangThai = new TextBox();
             label6 = new Label();
-            dtpNgayVL = new DateTimePicker();
-            txtSDT = new TextBox();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
-            txtMa = new TextBox();
-            txtTen = new TextBox();
+            txtDiaChi = new TextBox();
+            txtMatKhau = new TextBox();
             btnThayDoi = new Button();
+            txtSDT = new TextBox();
+            txtVaiTro = new TextBox();
+            btnAdd = new Button();
+            btnDelete = new Button();
             SuspendLayout();
             // 
             // label1
@@ -60,20 +62,20 @@
             label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label8.Location = new Point(106, 113);
             label8.Name = "label8";
-            label8.Size = new Size(65, 20);
+            label8.Size = new Size(47, 20);
             label8.TabIndex = 48;
-            label8.Text = "Chức vụ";
+            label8.Text = "Email";
             // 
-            // cbbChucVu
+            // cbbEmail
             // 
-            cbbChucVu.FormattingEnabled = true;
-            cbbChucVu.Items.AddRange(new object[] { "Nhan Vien", "Khach Hang" });
-            cbbChucVu.Location = new Point(211, 110);
-            cbbChucVu.Margin = new Padding(3, 4, 3, 4);
-            cbbChucVu.Name = "cbbChucVu";
-            cbbChucVu.Size = new Size(428, 28);
-            cbbChucVu.TabIndex = 47;
-            cbbChucVu.SelectedIndexChanged += cbbChucVu_SelectedIndexChanged;
+            cbbEmail.FormattingEnabled = true;
+            cbbEmail.Items.AddRange(new object[] { "Nhan Vien", "Khach Hang" });
+            cbbEmail.Location = new Point(211, 110);
+            cbbEmail.Margin = new Padding(3, 4, 3, 4);
+            cbbEmail.Name = "cbbEmail";
+            cbbEmail.Size = new Size(428, 28);
+            cbbEmail.TabIndex = 47;
+            cbbEmail.SelectedIndexChanged += cbbChucVu_SelectedIndexChanged;
             // 
             // label7
             // 
@@ -85,13 +87,13 @@
             label7.TabIndex = 46;
             label7.Text = "Tình trạng";
             // 
-            // txtTinhTrang
+            // txtTrangThai
             // 
-            txtTinhTrang.Location = new Point(211, 304);
-            txtTinhTrang.Margin = new Padding(3, 4, 3, 4);
-            txtTinhTrang.Name = "txtTinhTrang";
-            txtTinhTrang.Size = new Size(428, 27);
-            txtTinhTrang.TabIndex = 45;
+            txtTrangThai.Location = new Point(211, 304);
+            txtTrangThai.Margin = new Padding(3, 4, 3, 4);
+            txtTrangThai.Name = "txtTrangThai";
+            txtTrangThai.Size = new Size(428, 27);
+            txtTrangThai.TabIndex = 45;
             // 
             // label6
             // 
@@ -99,25 +101,9 @@
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label6.Location = new Point(106, 276);
             label6.Name = "label6";
-            label6.Size = new Size(36, 20);
+            label6.Size = new Size(57, 20);
             label6.TabIndex = 44;
-            label6.Text = "SDT";
-            // 
-            // dtpNgayVL
-            // 
-            dtpNgayVL.Location = new Point(211, 227);
-            dtpNgayVL.Margin = new Padding(3, 4, 3, 4);
-            dtpNgayVL.Name = "dtpNgayVL";
-            dtpNgayVL.Size = new Size(428, 27);
-            dtpNgayVL.TabIndex = 43;
-            // 
-            // txtSDT
-            // 
-            txtSDT.Location = new Point(211, 265);
-            txtSDT.Margin = new Padding(3, 4, 3, 4);
-            txtSDT.Name = "txtSDT";
-            txtSDT.Size = new Size(428, 27);
-            txtSDT.TabIndex = 42;
+            label6.Text = "Vai Trò";
             // 
             // label5
             // 
@@ -125,19 +111,19 @@
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label5.Location = new Point(106, 237);
             label5.Name = "label5";
-            label5.Size = new Size(110, 20);
+            label5.Size = new Size(36, 20);
             label5.TabIndex = 41;
-            label5.Text = "Ngày Vào Làm";
+            label5.Text = "SDT";
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label4.Location = new Point(106, 199);
+            label4.Location = new Point(106, 195);
             label4.Name = "label4";
-            label4.Size = new Size(38, 20);
+            label4.Size = new Size(77, 20);
             label4.TabIndex = 40;
-            label4.Text = "Tên ";
+            label4.Text = "Mật Khẩu";
             // 
             // label3
             // 
@@ -145,54 +131,95 @@
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label3.Location = new Point(106, 152);
             label3.Name = "label3";
-            label3.Size = new Size(25, 20);
+            label3.Size = new Size(58, 20);
             label3.TabIndex = 39;
-            label3.Text = "ID";
+            label3.Text = "Địa Chỉ";
             // 
-            // txtMa
+            // txtDiaChi
             // 
-            txtMa.Location = new Point(211, 148);
-            txtMa.Margin = new Padding(3, 4, 3, 4);
-            txtMa.Name = "txtMa";
-            txtMa.Size = new Size(428, 27);
-            txtMa.TabIndex = 38;
+            txtDiaChi.Location = new Point(211, 148);
+            txtDiaChi.Margin = new Padding(3, 4, 3, 4);
+            txtDiaChi.Name = "txtDiaChi";
+            txtDiaChi.Size = new Size(428, 27);
+            txtDiaChi.TabIndex = 38;
             // 
-            // txtTen
+            // txtMatKhau
             // 
-            txtTen.Location = new Point(211, 188);
-            txtTen.Margin = new Padding(3, 4, 3, 4);
-            txtTen.Name = "txtTen";
-            txtTen.Size = new Size(428, 27);
-            txtTen.TabIndex = 37;
+            txtMatKhau.Location = new Point(211, 188);
+            txtMatKhau.Margin = new Padding(3, 4, 3, 4);
+            txtMatKhau.Name = "txtMatKhau";
+            txtMatKhau.Size = new Size(428, 27);
+            txtMatKhau.TabIndex = 37;
             // 
             // btnThayDoi
             // 
-            btnThayDoi.Location = new Point(449, 393);
+            btnThayDoi.Location = new Point(211, 358);
             btnThayDoi.Margin = new Padding(3, 4, 3, 4);
             btnThayDoi.Name = "btnThayDoi";
-            btnThayDoi.Size = new Size(190, 31);
+            btnThayDoi.Size = new Size(123, 31);
             btnThayDoi.TabIndex = 49;
             btnThayDoi.Text = "Save";
             btnThayDoi.UseVisualStyleBackColor = true;
+            btnThayDoi.Click += btnThayDoi_Click;
+            // 
+            // txtSDT
+            // 
+            txtSDT.Location = new Point(211, 234);
+            txtSDT.Margin = new Padding(3, 4, 3, 4);
+            txtSDT.Name = "txtSDT";
+            txtSDT.Size = new Size(428, 27);
+            txtSDT.TabIndex = 42;
+            // 
+            // txtVaiTro
+            // 
+            txtVaiTro.Location = new Point(211, 269);
+            txtVaiTro.Margin = new Padding(3, 4, 3, 4);
+            txtVaiTro.Name = "txtVaiTro";
+            txtVaiTro.Size = new Size(428, 27);
+            txtVaiTro.TabIndex = 50;
+            // 
+            // btnAdd
+            // 
+            btnAdd.Location = new Point(365, 358);
+            btnAdd.Margin = new Padding(3, 4, 3, 4);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(114, 31);
+            btnAdd.TabIndex = 51;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Location = new Point(514, 358);
+            btnDelete.Margin = new Padding(3, 4, 3, 4);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(125, 31);
+            btnDelete.TabIndex = 52;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // TaiKhoan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 600);
+            Controls.Add(btnDelete);
+            Controls.Add(btnAdd);
+            Controls.Add(txtVaiTro);
             Controls.Add(btnThayDoi);
             Controls.Add(label8);
-            Controls.Add(cbbChucVu);
+            Controls.Add(cbbEmail);
             Controls.Add(label7);
-            Controls.Add(txtTinhTrang);
+            Controls.Add(txtTrangThai);
             Controls.Add(label6);
-            Controls.Add(dtpNgayVL);
             Controls.Add(txtSDT);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(txtMa);
-            Controls.Add(txtTen);
+            Controls.Add(txtDiaChi);
+            Controls.Add(txtMatKhau);
             Controls.Add(label1);
             Margin = new Padding(3, 4, 3, 4);
             Name = "TaiKhoan";
@@ -206,17 +233,19 @@
 
         private Label label1;
         private Label label8;
-        private ComboBox cbbChucVu;
+        private ComboBox cbbEmail;
         private Label label7;
-        private TextBox txtTinhTrang;
+        private TextBox txtTrangThai;
         private Label label6;
-        private DateTimePicker dtpNgayVL;
-        private TextBox txtSDT;
         private Label label5;
         private Label label4;
         private Label label3;
-        private TextBox txtMa;
-        private TextBox txtTen;
+        private TextBox txtDiaChi;
+        private TextBox txtMatKhau;
         private Button btnThayDoi;
+        private TextBox txtSDT;
+        private TextBox txtVaiTro;
+        private Button btnAdd;
+        private Button btnDelete;
     }
 }
